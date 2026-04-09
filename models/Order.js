@@ -16,7 +16,8 @@ const OrderItemSchema = new mongoose.Schema({
     product_id: { type: String, required: true },
     product_name: { type: String, required: true },
     price: { type: Number, required: true },
-    quantity: { type: Number, required: true }
+    quantity: { type: Number, required: true },
+    image_url: { type: String }
 }, { _id: false });
 
 const OrderSchema = new mongoose.Schema({

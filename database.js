@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://abhijinkm35_db:5bmRSIJg9ImeOtMW@cluster0.yadyo6s.mongodb.net/etmek';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/etmek';
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('Connected to MongoDB database.'))
@@ -50,7 +50,8 @@ const OrderItemSchema = new mongoose.Schema({
     product_id: { type: String, required: true },
     product_name: { type: String, required: true },
     price: { type: Number, required: true },
-    quantity: { type: Number, required: true }
+    quantity: { type: Number, required: true },
+    image_url: { type: String }
 }, { _id: false });
 
 const OrderSchema = new mongoose.Schema({
