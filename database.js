@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/etmek';
-
-mongoose.connect(MONGODB_URI)
-    .then(() => console.log('Connected to MongoDB database.'))
-    .catch((err) => console.error('Error connecting to MongoDB', err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected ✅"))
+  .catch(err => console.log(err));
 
 // Global schema transform to convert _id to id
 const schemaOptions = {
